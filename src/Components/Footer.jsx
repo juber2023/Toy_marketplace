@@ -4,7 +4,7 @@ import { ImFacebook, ImInstagram, ImLinkedin, ImTwitter} from "react-icons/im";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 py-8 mt-5">
+        <footer className="bg-gray-900 py-8 pb-0 mt-5">
         <div className="grid md:grid-cols-3 text-white w-3/4 mx-auto ">
         <div className="">
               <Link
@@ -44,7 +44,7 @@ const Footer = () => {
             <p className="text-sm">Email: info@example.com</p>
             <p className="text-sm">Phone: +1 123-456-7890</p>
             <div className="flex justify-center mt-3 md:justify-end">
-            <ul className="flex space-x-4 text-white  ">
+            <ul className="flex space-x-4 text-sky-500  ">
               <li><Link to='https://www.facebook.com/'><ImFacebook></ImFacebook></Link></li>
               <li><Link to='https://twitter.com/'><ImTwitter></ImTwitter></Link></li>
               <li><Link to='https://www.instagram.com/'><ImInstagram></ImInstagram></Link></li>
@@ -59,7 +59,7 @@ const Footer = () => {
           
         <div className="bg-gray-800 py-2">
           <div className="container mx-auto text-center text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Action Toys Marketplace. All rights reserved.
+            &copy; 2023 Action Toys Marketplace. All rights reserved.
           </div>
         </div>
       </footer>

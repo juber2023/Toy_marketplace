@@ -11,6 +11,10 @@ import PropsApi from './Components/ContextApi';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Layout from './Components/Layout';
+import Blogs from './Components/Blogs';
+import AllToys from './Components/AllToys';
+import AddToy from './Components/AddToy';
+import MyToys from './Components/MyToys';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +24,8 @@ const router = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        loader:()=>fetch('http://localhost:5000/toys')
       },
 
       {
@@ -30,6 +35,22 @@ const router = createBrowserRouter([
       {
         path:'/login',
         element:<Login></Login>
+      },
+      {
+        path:'/blogs',
+        element:<Blogs></Blogs>
+      },
+      {
+        path:'/allToys',
+        element:<AllToys></AllToys>
+      },
+      {
+        path:'/addToy',
+        element:<AddToy></AddToy>
+      },
+      {
+        path:'/myToys',
+        element:<MyToys></MyToys>
       },
     ]
   },

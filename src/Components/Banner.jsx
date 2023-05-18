@@ -1,5 +1,7 @@
+import useTitle from "./Usetitle";
 
 const Banner = () => {
+    useTitle('Home')
     return (
         <div className="h-[calc(100vh-100px)]">
               <div  className="relative ">
