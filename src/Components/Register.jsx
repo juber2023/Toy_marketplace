@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom';
 import { updateProfile } from 'firebase/auth';
 import { UserIdentity } from './ContextApi';
 import { FcGoogle } from 'react-icons/fc';
+import useTitle from './Usetitle';
 
 const Register = () => {
     const {createUser,googleLogIn}=useContext(UserIdentity)
     const [liveError, SetLiveError]=useState('')
     const [success, SetSuccess]=useState('')
+    useTitle('Register')
 
     const handleRegister=event=>{
         event.preventDefault()

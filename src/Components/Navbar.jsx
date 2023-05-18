@@ -12,10 +12,11 @@ const Navbar = () => {
     }
   
   return (
-    <nav className=" text-white bg-gradient-to-r from-purple-500 via-sky-300 to-pink-500">
+    <nav className=" text-white bg-gradient-to-r from-purple-500 via-sky-300 to-pink-500 p-2">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
+          <div className="flex justify-center items-center gap-3">
+          <img src="https://img.freepik.com/premium-vector/superhero-doing-thumb-up_24381-2002.jpg?w=740" alt="Action Toys Marketplace" className="h-16 w-16 rounded-xl" />
             <Link
               to="/"
               className=" font-bold text-3xl"
@@ -29,6 +30,7 @@ const Navbar = () => {
             </div>
                  
             </Link>
+            
           </div>
 
           <div className="mx-auto space-x-5 hidden md:flex ">
@@ -54,19 +56,18 @@ const Navbar = () => {
               >
                 Toys
               </ActiveLink>
-              <ActiveLink
-                to="/register"
-                className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-base font-medium"
-              >
-                Register
-              </ActiveLink>
               {
               user?
               <div className="flex space-x-4 items-center">
                 <p className="cursor-pointer" onClick={handleLogOut}>Logout</p>
                 <img className=" h-12 w-12 rounded-full cursor-pointer" src={user?.photoURL} alt="" title={user?.displayName} />
               </div>
-              :<ActiveLink to="/login">Login</ActiveLink>
+              :
+              <div className="space-x-4">
+                  <ActiveLink to="/register">Register</ActiveLink>
+                  <ActiveLink to="/login">Login</ActiveLink>
+              </div>
+              
               
             }
             </div>
@@ -122,7 +123,11 @@ const Navbar = () => {
                 <p className="cursor-pointer" onClick={handleLogOut}>Logout</p>
                 <img className=" h-12 w-12 rounded-full cursor-pointer" src={user?.photoURL} alt="" title={user?.displayName} />
               </div>
-              :<ActiveLink to="/login">Login</ActiveLink>
+              :
+              <div className="space-x-4">
+              <ActiveLink to="/register">Register</ActiveLink>
+              <ActiveLink to="/login">Login</ActiveLink>
+          </div>
               
             }
           

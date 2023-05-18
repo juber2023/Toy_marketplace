@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { UserIdentity } from "./ContextApi";
+import useTitle from './Usetitle';
 
 const Login = () => {
   const [error, SetError] = useState("");
@@ -9,6 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  useTitle('login')
 
   const handleLogin = (e) => {
     e.preventDefault();

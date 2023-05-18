@@ -4,7 +4,7 @@ import { ImFacebook, ImInstagram, ImLinkedin, ImTwitter} from "react-icons/im";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 py-8 ">
+        <footer className="bg-gray-900 py-8 mt-5">
         <div className="grid md:grid-cols-3 text-white w-3/4 mx-auto ">
         <div className="">
               <Link
@@ -23,7 +23,7 @@ const Footer = () => {
                 <img src="https://img.freepik.com/premium-vector/superhero-doing-thumb-up_24381-2002.jpg?w=740" alt="Action Toys Marketplace" className="h-52 rounded-xl" />
                 
               </div>
-              <div className='flex flex-col items-center'> 
+              <div className='flex flex-col md:items-center my-4 md:my-0'> 
               <ul>
               <li className="text-lg font-bold mb-2">Opening Time</li>
               <li>Monday: 9am - 5pm</li>
@@ -37,22 +37,25 @@ const Footer = () => {
 
               </div>
               
-            <div className='text-end'>
+            <div className='md:text-end '>
             <h3 className="text-lg font-bold mb-2">Contact</h3>
+            <p className="text-sm">Rajshahi</p>
+            <p className="text-sm">Naogaon,Mohadevpur</p>
             <p className="text-sm">Email: info@example.com</p>
             <p className="text-sm">Phone: +1 123-456-7890</p>
-          </div>
-       
-        </div>
-     
-          <div className="flex justify-center">
-            <ul className="flex space-x-4 text-white ">
+            <div className="flex justify-center mt-3 md:justify-end">
+            <ul className="flex space-x-4 text-white  ">
               <li><Link to='https://www.facebook.com/'><ImFacebook></ImFacebook></Link></li>
               <li><Link to='https://twitter.com/'><ImTwitter></ImTwitter></Link></li>
               <li><Link to='https://www.instagram.com/'><ImInstagram></ImInstagram></Link></li>
               <li><Link to='https://www.linkedin.com/'><ImLinkedin></ImLinkedin></Link></li>
             </ul>
           </div>
+          </div>
+       
+        </div>
+     
+
           
         <div className="bg-gray-800 py-2">
           <div className="container mx-auto text-center text-gray-400 text-sm">
