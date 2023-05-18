@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import ActiveLink from "./ActiveLink";
+import { useContext } from "react";
+import { UserIdentity } from "./ContextApi";
 
 const Navbar = () => {
+    const {user,logOut}=useContext(UserIdentity)
+    const handleLogOut=()=>{
+      logOut()
+      .then(()=>{})
+      .catch(error=>{})
+    }
+  
   return (
     <nav className=" text-white bg-gradient-to-r from-purple-500 via-sky-300 to-pink-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,7 +31,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="mx-auto space-x-5">
+          <div className="mx-auto space-x-5 hidden md:flex ">
             <ActiveLink
               to="/"
               className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-base font-medium"
@@ -51,12 +60,15 @@ const Navbar = () => {
               >
                 Register
               </ActiveLink>
-              <ActiveLink
-                to="/login"
-                className="text-white hover:text-gray-200 px-3 py-2 rounded-md text-base font-medium"
-              >
-                Login
-              </ActiveLink>
+              {
+              user?
+              <div className="flex space-x-4 items-center">
+                <p className="cursor-pointer" onClick={handleLogOut}>Logout</p>
+                <img className=" h-12 w-12 rounded-full cursor-pointer" src={user?.photoURL} alt="" title={user?.displayName} />
+              </div>
+              :<ActiveLink to="/login">Login</ActiveLink>
+              
+            }
             </div>
           </div>
           <div className="md:hidden">
@@ -84,7 +96,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="md:hidden">
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
           <ActiveLink
             to="/"
             className="text-white block hover:text-gray-200 px-3 py-2 rounded-md text-base font-medium"
@@ -103,12 +115,17 @@ const Navbar = () => {
           >
             Cart
           </ActiveLink>
-          <ActiveLink
-            to="/account"
-            className="text-white block hover:text-gray-200 px-3 py-2 rounded-md text-base font-medium"
-          >
-            Account
-          </ActiveLink>
+          
+                      {
+              user?
+              <div className="flex space-x-4 items-center">
+                <p className="cursor-pointer" onClick={handleLogOut}>Logout</p>
+                <img className=" h-12 w-12 rounded-full cursor-pointer" src={user?.photoURL} alt="" title={user?.displayName} />
+              </div>
+              :<ActiveLink to="/login">Login</ActiveLink>
+              
+            }
+          
         </div>
       </div>
     </nav>

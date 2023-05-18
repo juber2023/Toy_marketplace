@@ -34,8 +34,7 @@ const Login = () => {
       .catch(() =>{});
   };
   return (
-    <div>
-      <div className="">
+
         <div className="grid md:grid-cols-2 items-center">
           <div className="hidden md:block ">
             <img className="" src='https://img.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg?w=826&t=st=1684383214~exp=1684383814~hmac=d25f658fe00374f4d8b6dd3f469da39c13fa198725b4681f6a92c827e8451713' alt="" />
@@ -89,7 +88,7 @@ const Login = () => {
             </button>
             <p className="text-red-500 font-bold text-2xl">{error}</p>
             <p>
-             New to Action Toys? Please <Link to='register' className="font-bold text-sm text-blue-500 hover:text-blue-800">Register</Link>
+             New to Action Toys? Please <Link to='/register' className="font-bold text-sm text-blue-500 hover:text-blue-800">Register</Link>
             </p>
           
         </form>
@@ -102,8 +101,7 @@ const Login = () => {
       </div>
     </div>
         </div>
-      </div>
-    </div>
+
   );
 };
 

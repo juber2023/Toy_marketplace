@@ -1,12 +1,11 @@
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {FaCheck } from "react-icons/fa";
 import { updateProfile } from 'firebase/auth';
 import { UserIdentity } from './ContextApi';
 import { FcGoogle } from 'react-icons/fc';
 
 const Register = () => {
-    const {user, createUser,googleLogIn}=useContext(UserIdentity)
+    const {createUser,googleLogIn}=useContext(UserIdentity)
     const [liveError, SetLiveError]=useState('')
     const [success, SetSuccess]=useState('')
 
@@ -130,12 +129,12 @@ const Register = () => {
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              Sign In
+              Register
             </button>
             <p className='text-green-500 font-semibold text-xl'>{success}</p>
             
             <p>
-             Already have an account? Please <Link to='register' className="font-bold text-sm text-blue-500 hover:text-blue-800">Login</Link>
+             Already have an account? Please <Link to='/login' className="font-bold text-sm text-blue-500 hover:text-blue-800">Login</Link>
             </p>
           
         </form>
