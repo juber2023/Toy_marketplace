@@ -1,7 +1,9 @@
 import { Link, useLoaderData } from "react-router-dom";
+import useTitle from "./Usetitle";
 
 const AllToys = () => {
   const toys = useLoaderData();
+  useTitle('All Toys')
   console.log(toys);
   return (
     <div className="grid md:grid-cols-2 gap-5">
