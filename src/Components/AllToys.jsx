@@ -1,15 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "./Usetitle";
+import { useContext } from "react";
+import { UserIdentity } from "./ContextApi";
 
 const AllToys = () => {
+  const {user}=useContext(UserIdentity)
   const toys = useLoaderData();
   useTitle('All Toys')
-  console.log(toys);
   return (
     <div className="grid md:grid-cols-2 gap-5">
       {toys.map((toy) => {
         return (
           <div key={toy._id}>
+            {console.log(toy)}
             <div className="card lg:card-side bg-base-100 shadow-xl">
               <figure>
                 <img
@@ -19,7 +22,8 @@ const AllToys = () => {
                 />
               </figure>
               <div className="card-body">
-              <p className="font-bold text-2xl">{toy.name}</p>
+              {toy?.sellerName?<p className="font-bold text-2xl">Seller: {toy.sellerName}</p>:''}
+              <p className="font-bold text-2xl">Toy: {toy.name}</p>
                 <p> <span className="font-semibold text-xl">Category:</span>  {toy.category}</p>
                 <p> <span className="font-semibold text-xl">Price:</span> {toy.price}</p>
                 <p><span className="font-semibold text-xl">Available:</span> {toy.available}</p>

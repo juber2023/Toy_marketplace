@@ -69,7 +69,7 @@ const Register = () => {
               Name
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:focus:outline-sky-400 focus:shadow-outline"
               id="name"
               type="text"
               placeholder="name"
@@ -85,7 +85,7 @@ const Register = () => {
               Email
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:focus:outline-sky-400 focus:shadow-outline"
               id="email"
               type="email"
               placeholder="email"
@@ -101,7 +101,7 @@ const Register = () => {
               Photo
             </label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:focus:outline-sky-400 focus:shadow-outline"
               id="url"
               type="url"
               placeholder="photo url"
@@ -117,7 +117,7 @@ const Register = () => {
               Password
             </label>
             <input onChange={handlePassword}
-              className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-gray-700 leading-tight focus:focus:outline-sky-400 focus:shadow-outline"
               id="password"
               type="password"
               placeholder="password"
@@ -128,7 +128,7 @@ const Register = () => {
           </div>
           
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:focus:outline-sky-400 focus:shadow-outline"
               type="submit"
             >
               Register

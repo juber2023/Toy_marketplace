@@ -10,7 +10,7 @@ const Navbar = () => {
       .then(()=>{})
       .catch(error=>{})
     }
-  
+  console.log(user);
   return (
     <nav className=" text-white bg-gradient-to-r bg-sky-500 p-2 sticky top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,7 +77,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               type="button"
-              className="text-white hover:text-gray-200 focus:outline-none focus:text-gray-200"
+              className="text-white hover:text-gray-200 focus:focus:outline-sky-400 focus:text-gray-200"
               aria-label="Toggle menu"
             >
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
