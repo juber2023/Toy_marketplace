@@ -1,7 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from './Usetitle';
 
 const ErrorPage = () => {
+    useTitle('Error')
     return (
         <div className='flex justify-center items-center flex-col h-screen'>
             <div >

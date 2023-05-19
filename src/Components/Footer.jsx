@@ -41,8 +41,8 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-2">Contact</h3>
             <p className="text-sm">Rajshahi</p>
             <p className="text-sm">Naogaon,Mohadevpur</p>
-            <p className="text-sm">Email: info@example.com</p>
-            <p className="text-sm">Phone: +1 123-456-7890</p>
+            <p className="text-sm">Email: juber.eco@gmail.com</p>
+            <p className="text-sm">Phone: +8801748427227</p>
             <div className="flex justify-center mt-3 md:justify-end">
             <ul className="flex space-x-4 text-sky-500  ">
               <li><Link to='https://www.facebook.com/'><ImFacebook></ImFacebook></Link></li>
