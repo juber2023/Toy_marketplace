@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const ToysTab = ({toys}) => {
@@ -35,7 +36,8 @@ const ToysTab = ({toys}) => {
                   <h2 className="font-bold text-xl">{item.name}</h2>
                   <p>Price: {item.price}</p>
                   <p>Rating: {item.rating}</p>
-                  <button className="button mt-5">View details</button>
+                  <Link to={`/toy/${item._id}`} ><button className="button mt-5">View details</button></Link>
+                  
                 </div>
               )
             ))}
