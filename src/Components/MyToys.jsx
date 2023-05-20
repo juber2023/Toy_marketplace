@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { UserIdentity } from "./ContextApi";
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
@@ -68,7 +68,7 @@ const MyToys = () => {
                 <img
                   src={toy.img}
                   alt={toy.name}
-                  className="w-2/3 h-28 object-cover rounded mx-auto"
+                  className="w-2/3 h-28 rounded mx-auto"
                 />
               </td>
               <td className="p-2 border border-gray-300">{toy.name}</td>
@@ -76,9 +76,10 @@ const MyToys = () => {
               <td className="p-2 border border-gray-300">{toy.available}</td>
               <td className="p-2 border border-gray-300">{toy.details}</td>
               <td className="p-2 border border-gray-300">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
+                <Link to={`/update/${toy._id}`}><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
                   Update
-                </button>
+                </button></Link>
+                
                 <button onClick={()=>handleDelete(toy._id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                   Delete
                 </button>
