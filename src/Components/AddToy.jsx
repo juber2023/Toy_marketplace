@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { UserIdentity } from "./ContextApi";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
     const {user}=useContext(UserIdentity)
@@ -29,13 +30,24 @@ const AddToy = () => {
         .then(data=>{
             console.log(data);
             if(data.insertedId){
-                alert('Data send successfully')
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Successfully Toy Added',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
             }
+            form.reset()
         })
     }
     
     return (
-        <div>
+        <div className="grid md:grid-cols-2 items-center gap-3">
+            <div>
+                <img src="https://img.freepik.com/premium-vector/cartoon-little-boy-playing-with-many-toys_29190-7169.jpg?w=900" alt="" />
+            </div>
+            <div>
             <form onSubmit={handleAddToy}
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
           
@@ -143,6 +155,12 @@ const AddToy = () => {
               required
             />
           </div>
+          <label
+              className="block text-gray-700 text-sm font-bold mb-2"
+              htmlFor="rating"
+            >
+              Category
+            </label>
           <label className="block">
           <select className="form-select mt-1 block w-full shadow appearance-none border border-red rounded py-2 px-3 text-gray-700 leading-tight focus:focus:outline-sky-400 focus:shadow-outline" name='category' required>
             <option value="">Select Category </option>
@@ -155,7 +173,7 @@ const AddToy = () => {
           
           
             <button
-              className="button"
+              className="button mt-6"
               type="submit"
             >
               Add Toy
@@ -163,6 +181,7 @@ const AddToy = () => {
            
           
         </form>
+            </div>
         </div>
     );
 };

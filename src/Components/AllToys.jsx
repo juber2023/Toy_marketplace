@@ -8,21 +8,21 @@ const AllToys = () => {
   const toys = useLoaderData();
   useTitle('All Toys')
   return (
-    <div className="grid md:grid-cols-2 gap-5">
+    <div className="grid md:grid-cols-2 gap-5 h-[490]">
       {toys.map((toy) => {
         return (
           <div key={toy._id}>
             {console.log(toy)}
             <div className="card lg:card-side bg-base-100 shadow-xl">
-              <figure>
+              
                 <img
                   src={toy.img}
                   alt="Album"
-                  className="h-56"
+                  className="h-56 w-48"
                 />
-              </figure>
+              
               <div className="card-body">
-              {toy?.sellerName?<p className="font-bold text-2xl">Seller: {toy.sellerName}</p>:''}
+              {toy?.sellerName?<p className="font-bold text-2xl ">Seller: {toy.sellerName}</p>:''}
               <p className="font-bold text-2xl">Toy: {toy.name}</p>
                 <p> <span className="font-semibold text-xl">Category:</span>  {toy.category}</p>
                 <p> <span className="font-semibold text-xl">Price:</span> {toy.price}</p>

@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 
 const ToysTab = ({toys}) => {
@@ -10,7 +13,14 @@ const ToysTab = ({toys}) => {
     const handleTabClick = (category) => {
       setActiveTab(category);
     console.log(toys);
+
+    useEffect(() => {
+      AOS.init({
+        duration: 1000, // Specify the animation duration (in milliseconds)
+      });
+    }, []);
     };
+
     return (
         <div className="container mx-auto">
       <div className="flex">
@@ -31,8 +41,8 @@ const ToysTab = ({toys}) => {
           <div className="mt-4 grid md:grid-cols-3 gap-10">
             {toys.map((item, index) => (
               item.category === activeTab && (
-                <div key={index} className="p-5 shadow-lg">
-                  <img className="h-60 w-full" src={item.img} alt={item.name} />
+                <div key={index} className="p-5 shadow-lg" >
+                  <img className="h-56 w-full" src={item.img} alt={item.name} />
                   <h2 className="font-bold text-xl">{item.name}</h2>
                   <p>Price: ${item.price}</p>
                   <p>Rating: {item.rating}</p>
