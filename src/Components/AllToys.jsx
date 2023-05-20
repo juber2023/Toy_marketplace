@@ -1,40 +1,83 @@
 import { Link, useLoaderData } from "react-router-dom";
 import useTitle from "./Usetitle";
-import { useContext } from "react";
-import { UserIdentity } from "./ContextApi";
+import { useState } from "react";
 
 const AllToys = () => {
-  const {user}=useContext(UserIdentity)
   const toys = useLoaderData();
-  useTitle('All Toys')
+  const limitToys = toys.splice(1, 20);
+  const [search, SetSearch] = useState(limitToys);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const inputName = event.target.name.value;
+    const filterSearch = limitToys.filter(
+      (f) => f.name.toUpperCase() === inputName.toUpperCase()
+    );
+    SetSearch(filterSearch);
+    console.log(filterSearch);
+  };
+  useTitle("All Toys");
   return (
-    <div className="grid md:grid-cols-2 gap-5 h-[490]">
-      {toys.map((toy) => {
-        return (
-          <div key={toy._id}>
-            {console.log(toy)}
-            <div className="card lg:card-side bg-base-100 shadow-xl">
-              
-                <img
-                  src={toy.img}
-                  alt="Album"
-                  className="h-56 w-48"
-                />
-              
-              <div className="card-body">
-              {toy?.sellerName?<p className="font-bold text-2xl ">Seller: {toy.sellerName}</p>:''}
-              <p className="font-bold text-2xl">Toy: {toy.name}</p>
-                <p> <span className="font-semibold text-xl">Category:</span>  {toy.category}</p>
-                <p> <span className="font-semibold text-xl">Price:</span> ${toy.price}</p>
-                <p><span className="font-semibold text-xl">Available:</span> {toy.available}</p>
-                <div className="card-actions justify-end">
-                <Link to={`/toy/${toy._id}`} ><button className="button mt-5">View details</button></Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-      })}
+    <div>
+      <form
+        onSubmit={handleSearch}
+        className="flex my-10 space-x-5 w-2/3 mx-auto"
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="Search by name"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:focus:outline-sky-400 focus:shadow-outline"
+        />
+        <button className="button" type="submit">
+          Search
+        </button>
+      </form>
+
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Serial
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Seller
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Toy Name
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Category
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Price
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Available
+            </th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Action
+            </th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {search.map((item, index) => (
+            <tr key={item._id}>
+              <td className="px-6 py-4 whitespace-nowrap">{index + 1}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{item.sellerName}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{item.name}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{item.category}</td>
+              <td className="px-6 py-4 whitespace-nowrap">${item.price}</td>
+              <td className="px-6 py-4 whitespace-nowrap">{item.available}</td>
+              <td className="px-6 py-4 whitespace-nowrap">
+                <Link to={`/toy/${item._id}`}>
+                  <button className="button mt-5">View details</button>
+                </Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
