@@ -50,7 +50,9 @@ const MyToys = () => {
 
     return (
         <div>
-      <table className="border-collapse w-full">
+      {
+        SellerToys.length>0?
+        <table className="border-collapse w-full">
         <thead>
           <tr>
             <th className="p-2 border border-gray-300">Serial</th>
@@ -90,6 +92,9 @@ const MyToys = () => {
           ))}
         </tbody>
       </table>
+        :
+        <div className="text-2xl font-bold text-center">You have not added any toys yet. Please add minimum one toy. </div>
+      }
     </div>
     );
 };

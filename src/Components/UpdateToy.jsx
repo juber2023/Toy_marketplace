@@ -44,7 +44,9 @@ const UpdateToy = () => {
     }
     return (
         <div className="grid md:grid-cols-2 mt-5 items-center gap-5">
-            <div>
+            <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
                 <img src={img} alt="image not found" className="rounded-lg" />
             </div>
             <div>

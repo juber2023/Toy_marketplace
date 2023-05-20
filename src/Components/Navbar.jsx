@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { UserIdentity } from "./ContextApi";
 
 const Navbar = () => {
-    const {user,logOut}=useContext(UserIdentity)
+    const {user,logOut,loading}=useContext(UserIdentity)
     const handleLogOut=()=>{
       logOut()
       .then(()=>{})
@@ -107,29 +107,32 @@ const Navbar = () => {
             Home
           </ActiveLink>
           <ActiveLink
-            to="/toys"
+            to="/allToys"
             className="text-white block hover:text-gray-200 px-3 py-2 rounded-md text-base font-medium"
           >
-            Toys
+            All Toys
           </ActiveLink>
           <ActiveLink
-            to="/cart"
+            to="/blogs"
             className="text-white block hover:text-gray-200 px-3 py-2 rounded-md text-base font-medium"
           >
-            Cart
+            Blogs
           </ActiveLink>
           
-                      {
+          {
               user?
-              <div className="flex space-x-4 items-center">
+              <div className="flex flex-col font-bold">
+                <ActiveLink to='/addToy'>Add A Toy</ActiveLink>
+                <ActiveLink to='/myToys'>My Toys</ActiveLink>
                 <p className="cursor-pointer" onClick={handleLogOut}>Logout</p>
                 <img className=" h-12 w-12 rounded-full cursor-pointer" src={user?.photoURL} alt="" title={user?.displayName} />
               </div>
               :
-              <div className="space-x-4">
-              <ActiveLink to="/register">Register</ActiveLink>
-              <ActiveLink to="/login">Login</ActiveLink>
-          </div>
+              <div className="flex flex-col font-bold">
+                  <ActiveLink to="/register">Register</ActiveLink>
+                  <ActiveLink to="/login">Login</ActiveLink>
+              </div>
+              
               
             }
           

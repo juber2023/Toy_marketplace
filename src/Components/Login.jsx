@@ -38,7 +38,9 @@ const Login = () => {
   return (
 
         <div className="grid md:grid-cols-2 items-center">
-          <div className="hidden md:block ">
+          <div className="hidden md:block " data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
             <img className="" src='https://img.freepik.com/free-vector/access-control-system-abstract-concept_335657-3180.jpg?w=826&t=st=1684383214~exp=1684383814~hmac=d25f658fe00374f4d8b6dd3f469da39c13fa198725b4681f6a92c827e8451713' alt="" />
           </div>
           <div className="flex justify-center items-center">

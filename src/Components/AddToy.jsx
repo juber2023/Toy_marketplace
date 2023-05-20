@@ -46,7 +46,9 @@ const AddToy = () => {
     
     return (
         <div className="grid md:grid-cols-2 items-center gap-3">
-            <div>
+            <div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
                 <img src="https://img.freepik.com/premium-vector/cartoon-little-boy-playing-with-many-toys_29190-7169.jpg?w=900" alt="" />
             </div>
             <div>
@@ -136,6 +138,7 @@ const AddToy = () => {
               placeholder="(1-5)"
               min={1}
               max={5}
+              step="any"
               name="rating"
               required
             />
