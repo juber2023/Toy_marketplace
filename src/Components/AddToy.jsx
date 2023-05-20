@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { UserIdentity } from "./ContextApi";
 import Swal from "sweetalert2";
+import useTitle from "./Usetitle";
 
 const AddToy = () => {
     const {user}=useContext(UserIdentity)
+    useTitle('Add A Toy')
     const handleAddToy=(event)=>{
         event.preventDefault()
         const form=event.target;

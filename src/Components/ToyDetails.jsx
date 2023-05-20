@@ -15,7 +15,7 @@ const ToyDetails = () => {
             </div>
                 <p className="font-bold text-2xl">Toy: {toy.name}</p>
                 <p> <span className="font-semibold text-xl">Category:</span>  {toy.category}</p>
-                <p> <span className="font-semibold text-xl">Price:</span> {toy.price}</p>
+                <p> <span className="font-semibold text-xl">Price:</span> ${toy.price}</p>
                 <p><span className="font-semibold text-xl">Available:</span> {toy.available}</p>
                 <p><span className="font-semibold text-xl">Rating:</span> {toy.rating}</p>
                 <p><span className="font-semibold text-xl">Description:</span> {toy.details}</p>

@@ -38,10 +38,12 @@ const ToysTab = ({toys}) => {
               </button>
             ))}
           </div>
-          <div className="mt-4 grid md:grid-cols-3 gap-10">
+          <div className="mt-4 grid md:grid-cols-3 gap-10 ">
             {toys.map((item, index) => (
               item.category === activeTab && (
-                <div key={index} className="p-5 shadow-lg" >
+                <div key={index} className="p-5 shadow-lg" data-aos="flip-left"
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >
                   <img className="h-56 w-full" src={item.img} alt={item.name} />
                   <h2 className="font-bold text-xl">{item.name}</h2>
                   <p>Price: ${item.price}</p>

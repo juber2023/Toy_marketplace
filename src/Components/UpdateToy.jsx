@@ -25,6 +25,9 @@ const UpdateToy = () => {
         .then(res=>res.json())
         .then(data=>{
             console.log(data);
+            if(data.modifiedCount===0){
+                alert('Please Edit Any Field')
+              }
             if(data.modifiedCount>0){
                 Swal.fire({
                     position: 'center',
@@ -34,6 +37,7 @@ const UpdateToy = () => {
                     timer: 2000
                   })
                   navigate('/myToys')
+                 
             }
         })
 

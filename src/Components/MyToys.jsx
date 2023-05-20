@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import { UserIdentity } from "./ContextApi";
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
+import useTitle from "./Usetitle";
 
 
 const MyToys = () => {
@@ -12,6 +13,7 @@ const MyToys = () => {
     console.log(userEmail);
     const SellerToys=toys.filter(f=>userEmail===f.sellerEmail)
     const [allToys, SetAllToys]=useState(SellerToys)
+    useTitle('My Toys')
     
 
     const handleDelete=(id)=>{
@@ -52,30 +54,30 @@ const MyToys = () => {
         <thead>
           <tr>
             <th className="p-2 border border-gray-300">Serial</th>
-            <th className="p-2 border border-gray-300">Photo</th>
-            <th className="p-2 border border-gray-300">Name</th>
+            <th className="border border-gray-300">Photo</th>
+            <th className="border border-gray-300">Name</th>
             <th className="p-2 border border-gray-300">Price</th>
             <th className="p-2 border border-gray-300">Available</th>
-            <th className="p-2 border border-gray-300">Details</th>
-            <th className="p-2 border border-gray-300">Actions</th>
+            <th className="p-2 border border-gray-300 ">Details</th>
+            <th className="border border-gray-300">Actions</th>
           </tr>
         </thead>
         <tbody>
           {allToys.map((toy, index) => (
             <tr key={toy._id} className="text-center">
               <td className="p-2 border border-gray-300">{index + 1}</td>
-              <td className="p-2 border border-gray-300">
+              <td className="border border-gray-300">
                 <img
                   src={toy.img}
                   alt={toy.name}
                   className="w-2/3 h-28 rounded mx-auto"
                 />
               </td>
-              <td className="p-2 border border-gray-300">{toy.name}</td>
-              <td className="p-2 border border-gray-300">{toy.price}</td>
+              <td className="border border-gray-300">{toy.name}</td>
+              <td className="p-2 border border-gray-300">${toy.price}</td>
               <td className="p-2 border border-gray-300">{toy.available}</td>
-              <td className="p-2 border border-gray-300">{toy.details}</td>
-              <td className="p-2 border border-gray-300">
+              <td className="p-2 border border-gray-300 max-w-[250px]">{toy.details}</td>
+              <td className="border border-gray-300">
                 <Link to={`/update/${toy._id}`}><button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2">
                   Update
                 </button></Link>

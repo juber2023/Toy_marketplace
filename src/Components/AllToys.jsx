@@ -25,7 +25,7 @@ const AllToys = () => {
               {toy?.sellerName?<p className="font-bold text-2xl ">Seller: {toy.sellerName}</p>:''}
               <p className="font-bold text-2xl">Toy: {toy.name}</p>
                 <p> <span className="font-semibold text-xl">Category:</span>  {toy.category}</p>
-                <p> <span className="font-semibold text-xl">Price:</span> {toy.price}</p>
+                <p> <span className="font-semibold text-xl">Price:</span> ${toy.price}</p>
                 <p><span className="font-semibold text-xl">Available:</span> {toy.available}</p>
                 <div className="card-actions justify-end">
                 <Link to={`/toy/${toy._id}`} ><button className="button mt-5">View details</button></Link>
