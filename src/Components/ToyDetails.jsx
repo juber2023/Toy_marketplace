@@ -1,5 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import useTitle from "./Usetitle";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const ToyDetails = () => {
     const toy=useLoaderData()
@@ -17,7 +19,13 @@ const ToyDetails = () => {
                 <p> <span className="font-semibold text-xl">Category:</span>  {toy.category}</p>
                 <p> <span className="font-semibold text-xl">Price:</span> ${toy.price}</p>
                 <p><span className="font-semibold text-xl">Available:</span> {toy.available}</p>
-                <p><span className="font-semibold text-xl">Rating:</span> {toy.rating}</p>
+                <p>
+                <Rating
+                            style={{ maxWidth: 150 }}
+                            value={Math.round(toy.rating?toy.rating:0)}
+                            readOnly
+                        />
+                </p>
                 <p><span className="font-semibold text-xl">Description:</span> {toy.details}</p>
             </div>
         </div>

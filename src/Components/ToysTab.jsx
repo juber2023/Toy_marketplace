@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 
 
@@ -46,7 +48,14 @@ const ToysTab = ({toys}) => {
                   <img className="h-56 w-full" src={item.img} alt={item.name} />
                   <h2 className="font-bold text-xl">{item.name}</h2>
                   <p>Price: ${item.price}</p>
-                  <p>Rating: {item.rating}</p>
+                  {/* <p>Rating: {item.rating}</p> */}
+                  <div>
+                  <Rating
+                            style={{ maxWidth: 150 }}
+                            value={Math.round(item.rating?item.rating:0)}
+                            readOnly
+                        />
+                  </div>
                   <Link to={`/toy/${item._id}`} ><button className="button mt-5">View details</button></Link>
                   
                 </div>
