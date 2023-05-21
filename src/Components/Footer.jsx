@@ -1,26 +1,28 @@
 
 import { Link } from 'react-router-dom';
 import { ImFacebook, ImInstagram, ImLinkedin, ImTwitter} from "react-icons/im";
+import img from '../assets/react.svg'
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 py-8 pb-0 mt-5">
+        <footer className="bg-gray-900 pt-4 pb-0 mt-5">
         <div className="grid md:grid-cols-3 text-white w-3/4 mx-auto ">
-        <div className="">
+        <div className="flex flex-col  items-start">
               <Link
               to="/"
               className=" font-bold text-3xl text-white"
             >
                 <div className="animate-bounce">
-                    <span className="text-yellow-500 animate-bounce inline-block">A</span>
+                    <span className="text-lime-400 animate-bounce inline-block">A</span>
                   <span>ction</span>
                   &nbsp;
-                  <span className="text-yellow-500 animate-bounce inline-block">T</span>
+                  <span className="text-lime-400 animate-bounce inline-block">T</span>
                   <span>oys</span>
             </div>
                  
             </Link>
-                <img src="https://img.freepik.com/premium-vector/superhero-doing-thumb-up_24381-2002.jpg?w=740" alt="Action Toys Marketplace" className="h-52 rounded-xl" />
+            <div className='ml-10'><img src={img} alt="Action Toys Marketplace" className='h-14' /></div>
+                
                 
               </div>
               <div className='flex flex-col md:items-center my-4 md:my-0'> 
@@ -31,8 +33,7 @@ const Footer = () => {
               <li>Wednesday: 9am - 5pm</li>
               <li>Thursday: 9am - 5pm</li>
               <li>Friday: 9am - 5pm</li>
-              <li>Saturday: Closed</li>
-              <li>Sunday: Closed</li>
+              <li>Saturday & Sunday: Closed</li>
             </ul>
 
               </div>

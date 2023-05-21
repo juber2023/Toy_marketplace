@@ -4,11 +4,13 @@ import ToysTab from "./ToysTab";
 import Gallery from "./Gallery";
 import Popular from "./Popular";
 import DownloadApp from "./DownloadApp";
+import useTitle from "./Usetitle";
 
 
 
 const Home = () => {
     const toys=useLoaderData()
+    useTitle('')
     return (
         <div>
             <Banner></Banner>

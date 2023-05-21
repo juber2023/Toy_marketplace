@@ -20,7 +20,7 @@ const AddToy = () => {
         const sellerEmail=user?.email
         const newToy={img, name, price, available, rating, category,details, sellerName,sellerEmail};
 
-        fetch('http://localhost:5000/toys',{
+        fetch('https://toy-server-assignment11.vercel.app/toys',{
             method: 'POST',
             headers: {
                 'content-type':'application/json'

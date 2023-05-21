@@ -1,5 +1,6 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
+import img from '../assets/react.svg'
 
 const DownloadApp = () => {
     return (
@@ -8,9 +9,11 @@ const DownloadApp = () => {
       <div className=" mx-auto">
         <div className=" mx-auto flex items-center justify-center">
           <div className="mr-10">
-            <img src='https://img.freepik.com/premium-vector/superhero-doing-thumb-up_24381-2002.jpg?w=740' alt="App Store" className="w-20" />
+            <img src={img} alt="App Store" className="w-20" />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col" data-aos="zoom-in"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">Download Our App</h2>
             <p className="text-gray-600 mb-6">Get the best toy shopping experience with our mobile app.</p>
             <div className="flex space-x-4">

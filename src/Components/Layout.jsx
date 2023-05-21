@@ -1,10 +1,14 @@
-
-import { Outlet, useNavigation } from 'react-router-dom';
+import { Outlet, useLocation, useNavigation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { useEffect } from 'react';
 
 
 const Layout = () => {
+    const {pathname}=useLocation()
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[pathname])
     const spinner=useNavigation()
     return (
         <div>
@@ -15,7 +19,7 @@ const Layout = () => {
                 <p>ading...</p>
             </div>:''}</div>
 
-            <div className='md:w-3/4 mx-auto min-h-[calc(100vh-515px)]'>
+            <div className='md:w-3/4 mx-auto min-h-[calc(100vh-435px)]'>
             <Outlet></Outlet>
             </div>
 

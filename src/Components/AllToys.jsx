@@ -10,9 +10,8 @@ const AllToys = () => {
   const handleSearch = (event) => {
     event.preventDefault();
     const inputName = event.target.name.value;
-    const filterSearch = limitToys.filter(
-      (f) => f.name.toUpperCase() === inputName.toUpperCase()
-    );
+    const filterSearch = limitToys.filter((f)=>
+      f.name.toUpperCase()===inputName.toUpperCase());
     SetSearch(filterSearch);
     console.log(filterSearch);
   };
@@ -21,13 +20,13 @@ const AllToys = () => {
     <div>
       <form
         onSubmit={handleSearch}
-        className="flex my-10 space-x-5 w-2/3 mx-auto"
+        className="flex my-10 space-x-5 w-2/4 mx-auto sticky top-20 z-50"
       >
         <input
           type="text"
           name="name"
           placeholder="Search by name"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:focus:outline-sky-400 focus:shadow-outline"
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:focus:outline-sky-400 focus:shadow-outline bg-gray-200"
         />
         <button className="button" type="submit">
           Search
